@@ -1,0 +1,1086 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  font-family: "Inter", sans-serif;
+}
+
+
+body, html { margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  background-color: #494646;
+  overflow-x: hidden; 
+}<----!DOCTYPE html>
+.MAINBODY {
+  background-image: url(img/bac\ 4.png);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  overflow-y: auto; 
+  height: 100vh; 
+  overflow: hidden
+}
+
+.content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.MAINBODY::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(transparent 50%, rgb(0, 0, 0));
+}
+
+.MAINBODY {
+  animation: backgroundImage 1.6s ease-out forwards;
+}
+
+.MAINBODY {
+  background-image: url(img/bac\ 4.png);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  overflow-y: auto; 
+  height: 100vh;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(transparent 50%, rgb(0, 0, 0));
+}
+
+
+
+.content img {
+  position: absolute;
+  bottom: -12%;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px; 
+  background-color:transparent; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 10000; 
+
+  
+}
+}
+.logo{
+  z-index: 10000;
+  position: absolute;
+}
+.logo img {
+  height: 50px; 
+  width: auto;
+}
+.nav {
+  display: flex;
+  gap: 20px;
+}
+.nav-item {
+  color: rgba(66, 63, 63, 0.3); 
+  font-size: 18px; 
+  font-weight: 600; 
+  transition: color 0.3s ease; 
+
+  
+}
+
+
+.nav-item:hover {
+  color: rgba(46, 232, 142, 0.415); 
+}
+.help-icon {
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.9); 
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.help-icon:hover {
+  color: #a8e063;
+}
+
+nav a {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: rgb(84, 80, 80);
+  width: 180px;
+  text-align: center;
+  padding: 15px 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.active {
+  background-color: #114930;
+  color: rgba(66, 63, 63, 0.3);
+}
+
+
+nav:hover > a:not(:hover) {
+  background-color: transparent;
+  color:rgb(225, 225, 225);
+}
+
+.title {
+  
+  position: absolute;
+  top: 30%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  
+}
+
+.title h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 15px;
+  color: white;
+  text-align: center;
+}
+
+.title h1 {
+  z-index: 5;
+  font-size: 10rem; 
+  font-weight: 800;
+  letter-spacing: 5px; 
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  margin: -20px 0;
+  white-space: nowrap; 
+  color: rgba(255, 255, 255, 0.7); 
+
+
+}
+
+p {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  width: 70%;
+  text-align: center;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.info-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 18%;
+  z-index: 1;
+}
+
+.cta {
+  position: absolute;
+  bottom: 8%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.cta button {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  height: 50px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.cta button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color:rgb(53, 53, 53);
+}
+
+.slider {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.slider i {
+  padding: 0 5%;
+  font-size: 36px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Animations */
+@keyframes bottomIn {
+  from {
+    transform: translateY(200px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.back-1 {
+  animation: bottomIn 1s ease-out forwards;
+}
+
+.back-2 {
+  animation: bottomIn 1.3s ease-out forwards;
+}
+
+.back-3 {
+  animation: bottomIn 1.5s ease-out forwards;
+}
+
+@keyframes bottomInText {
+  from {
+    transform: translateY(500px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+h3 {
+  animation: bottomInText 1s ease-out forwards;
+}
+
+h1 {
+  animation: bottomInText 1.2s ease-out forwards;
+}
+
+p {
+  animation: bottomInText 1.2s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+button {
+  animation: bottomInText 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+@keyframes backgroundImage {
+  from {
+    background-position: top;
+  }
+  to {
+    background-position: 50% 14%;
+  }
+}
+
+body {
+  animation: backgroundImage 1.6s ease-out forwards;
+}
+
+@keyframes topIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+nav {
+  animation: topIn 1.2s ease-out forwards;
+}
+
+@keyframes zoomOut{
+  from {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.slider {
+  animation: zoomOut 1.2s ease-out forwards;
+}
+
+
+
+<-------->
+/* Booking Container */
+.booking-container {
+  position: absolute;
+  right: 200px;
+  position: absolute;
+  top: 50%; /* Vertically center the button */
+  align: 200px; /* Move the button to the left */
+  transform: translateY(50%);
+  z-index: 100; /* Ensure it stays above other elements */
+}
+
+/* Booking Button */
+.booking-button {
+  background-color:  rgba(255, 255, 255, 0.2); /* Light green background */
+  border-color: #a8a8a8ec;
+  color: white; /* White text */
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  right: 100px;
+}
+
+.booking-button i {
+  margin-right: 8px; 
+}
+
+.booking-button:hover {
+  background-color: #499c5e; 
+}
+
+.booking-form {
+  display: none; 
+  position: absolute;
+  top: 60px; 
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  color: black;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 300px;
+}
+
+.booking-form h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+.booking-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.booking-form button {
+  background-color: #a8e063;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.booking-form button:hover {
+  background-color: #86c454; 
+}
+
+
+
+
+
+
+.carousel-container {
+  overflow: hidden;
+  width: 50%;
+  background-color: #111;
+  padding: 20px 0;
+  color: #fff;
+}
+
+.carousel-track {
+  display: flex;
+  animation: scroll-left 30s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  margin: 0 20px;
+  position: relative;
+  width: 300px;
+  color: #fff;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.footer {
+  background-image: url("img/stock-vector-tropical-leaf-wallpaper-luxury-nature-leaves-pattern-design-golden-banana-leaf-line-arts-hand-1825228952.png");
+  position: relative;
+  color: #fff;
+  padding: 40px 20px;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.footer .image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.footer .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.footer .cursor-window {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.footer .image-container:hover .cursor-window {
+  visibility: visible;
+  opacity: 1;
+}
+
+.footer-container {
+  position: relative;
+  z-index: 1;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 10px;
+}
+
+.subscribe-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.subscribe-form button {
+  padding: 10px 20px;
+  background-color: #a8e063;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+  background-color: #86c454;
+}
+
+.social-icons a {
+  color: #fff;
+  margin-right: 10px;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #a8e063;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
+  color: #ccc;
+}
+
+.footer-bottom a {
+  color: #a8e063;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+.image-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.image-container:hover img {
+  opacity: 1;
+}
+
+.cursor-window {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover .cursor-window {
+  visibility: visible;
+  opacity: 1;
+}
+
+----------------------------------Bento Boxes-------------------------
+
+
+.bento-backgroundmain {
+  background-image: url("img/images.jpg");
+  background-color: rgb(158, 30, 30); 
+  width: 100%; 
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto; 
+}
+
+.bento-container {
+  background-image: url("img/istockphoto-1577909823-2048x2048.jpg");
+  background-size: 100% 100%;;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 2em;
+  width: 100%; 
+  max-width: 1400px; 
+}
+
+.bento-row {
+  display: flex;
+  gap: 1em;
+  justify-content: center; 
+}
+
+.bento-box {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.1); 
+  border-radius: 1em;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff; 
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.bento-box.square {
+  width: 150px;
+  height: 150px;
+}
+
+.bento-box.rectangle {
+  width: 300px;
+  height: 150px;
+}
+
+.bento-box:hover {
+  transform: scale(1.05); 
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+---------------------------------------------scroll our brands ------------------------------ 
+
+.our-brands h3{
+  font-family: 'Bonheur Royale'; cursive ;font-size: 22px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+.our-brands {
+  font-family: 'Bonheur Royale'; cursive ;font-size: 22px;
+  background-color: black;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #000000; 
+  position: relative;
+}
+
+.our-brands h2 {
+  font-family: 'Bonheur Royale'; cursive ;font-size: 22px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.brands-container {
+  font-family: 'Bonheur Royale'; cursive ;font-size: 22px;
+  color: #d0d0d0;
+  background-color: #000000;
+  position: relative;
+  width: 100%; 
+  margin: 0 auto;
+  overflow: hidden; 
+}
+
+.brands-track {
+  display: flex;
+  gap: 30px; 
+  animation: scroll-left 20s linear infinite; 
+}
+
+.brands-track img {
+  width: 150px; 
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.brands-track img:hover {
+  transform: scale(1.1); 
+}
+
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+-----------------------------------------------------------------------
+.our-brands h {
+  text-align: center;
+  padding: 40px 20px;
+  color: #083224;
+  height: 25px;
+}
+
+.why-book-with-us {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #083224;
+  color: #51ce83;
+}
+
+.why-book-with-us h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; 
+}
+
+.feature {
+  flex: 1;
+  max-width: 250px;
+  text-align: center;
+  padding: 20px;
+}
+
+.feature i.icon {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.feature h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.feature a {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.feature a:hover {
+  text-decoration: underline;
+}
+
+
+.bento-backgroundmain{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+    background-image: url('"C:\Users\varsh\OneDrive\Desktop\HOTEL$RESORTS  WEBSITE\img\images.jpg"'); /* Replace with your image path */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    border-radius: 1em; 
+    padding: 1em;
+
+
+
+}
+------------------------------------------
+.mainrooms {
+  background-image: url("img\360_F_33113644_bEFrJJozWXqRRGaTmg0VrFTLLtSGogbG.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%; 
+  height: 100vh;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.container2 {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff; 
+}
+
+h1 {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 60px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.room-grid {
+  background-image: url("img\360_F_33113644_bEFrJJozWXqRRGaTmg0VrFTLLtSGogbG.jpg");
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.room-card {
+  font-family: 'Bonheur Royale'; cursive ;font-size: 22px;
+  background-image: url('img\—Pngtree—cloud or smoke on an_8473681.png');
+  background-color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.1); 
+  border-radius: 1em;
+  backdrop-filter: blur(15px); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  padding: 1em;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.room-card:hover {
+  background-image: url('img/j5r3rgku3lpsvqtffbhnc0cr4e.png');
+  transform: translateY(-5px);
+}
+
+.room-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.room-content {
+  padding: 24px;
+  text-align: center;
+}
+
+.room-title {
+  font-family: 'Bonheur Royale'; cursive ;font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.room-description {
+  font-size: 18px;
+  color: #1c4536;
+  line-height: 1.5;
+}
+
+.h3{
+  font-family: 'Bonheur Royale';font-size: 22px;
+}
+
+
+.video-container {
+  position: relative; 
+  width: 100%; 
+  height: 100vh; 
+  overflow: hidden; 
+}
+
+video {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+.overlay-content {
+  position: absolute; 
+  top: 50%; 
+  left: 55%; 
+  transform: translate(-50%, -50%); 
+  color: rgba(255, 255, 255, 0.615); 
+  text-align: center; 
+  z-index: 2; 
+}
+
+.overlay-content h1 {
+  left: 20%;
+  font-family: 'Bonheur Royale', cursive;
+  font-size: 5rem; /
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(12, 55, 29, 0.7); 
+}
+
+.overlay-content p {
+  font-family: 'Comic Sans MS ', cursive;
+  font-size: 1.5rem; 
+  margin-top: 10px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+--------------------------------------------
+
+.our-brands h1 { 
+  text-align: center;
+  padding: 40px 20px;
+  color: #f9f9e3; 
+  height: auto; 
+  margin: 0; 
+  font-size: 2.5em; 
+}
+
+.why-book-with-us {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fff;
+  color: #333;
+  margin-top: 20px;
+}
+
+.why-book-with-us h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around; 
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px; 
+  margin: 0 auto;
+}
+
+.feature {
+  flex: 1;
+  max-width: 300px; 
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #eee; 
+  border-radius: 8px;
+
+.feature i.icon {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.feature h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.feature a {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.feature a:hover {
+  text-decoration: underline;
+}
+
+
+.bento-backgroundmain {
+  margin: 20px; 
+  padding: 1em;
+  overflow-x: hidden; 
+  background-image: url('../img/images.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  border-radius: 1em; 
+}
+
+.bento-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 10px; 
+  padding: 20px; 
+  max-width: 960px; 
+  margin: 0 auto; 
+}
+
+.bento-box {
+  background-color: #f0f0f0; 
+  color: #333; /
+  padding: 20px;
+  border-radius: 5px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  min-height: 100px; 
+}
+
+.bento-box.rectangle.wide {
+}
+
+
+.map1{
+  background-color: rgb(88, 188, 164);
+}
+
+.text_map[
+  font-family: 'Bonheur Royale'; cursive ;font-size: 22px;
+  color: white;
+]

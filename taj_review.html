@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your Experience - Review Us!</title>
+    <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-image: url("img/Amazon-Rainforest.jpg"); /* Replace with your image path */
+            font-family: 'Bonheur Royale', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .logo-container {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            height: 50px; 
+            width: auto;
+        }
+
+        .logo-link {
+            display: block;
+            text-decoration: none;
+        }
+
+        .logo-image {
+            height: 50px;
+        }
+
+        .logo-link:hover .logo-image {
+            opacity: 0.8;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        .review-container {
+            background-color: rgba(255,255,255,0.5);
+            border : 1px solid rgba(39, 38, 38, 0.3);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+            overflow-y: auto;
+            max-height: 95vh;
+            position: relative; /* For positioning the dynamic notification */
+        }
+
+        h1 {
+            font-family: 'Bonheur Royale', cursive;
+            color: #0f4d39;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        .rating-section {
+            margin-bottom: 30px;
+        }
+
+        .rating-label {
+            display: block;
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 2em;
+            color: #ffc107;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .star-rating span {
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .star-rating span:hover,
+        .star-rating span.active {
+            transform: scale(1.2);
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .input-field {
+            width: calc(100% - 20px);
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            font-size: 1em;
+            color: #333;
+            transition: border-color 0.2s ease-in-out;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: rgba(13, 133, 59, 0.3);
+            box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+        }
+
+        textarea.input-field {
+            min-height: 100px;
+        }
+
+        .checkbox-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .checkbox-group label {
+            font-size: 1em;
+            color: #555;
+            margin-left: 8px;
+            font-weight: 500;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        .radio-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .radio-group label {
+            font-size: 1em;
+            color: #555;
+            margin-left: 8px;
+            font-weight: 500;
+        }
+
+        .radio-group input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        .dropdown-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .dropdown-group label {
+            display: block;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .dropdown-field {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .image-upload-section {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .image-upload-section label {
+            display: block;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .image-upload-container {
+            border: 1px dashed #ccc;
+            border-radius: 6px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: border-color 0.2s ease-in-out;
+            margin-bottom: 15px;
+        }
+
+        .image-upload-container:hover {
+            border-color: #0a4f27;
+        }
+
+        .image-upload-icon {
+            font-size: 2em;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        #image-preview-container {
+            width: 100%;
+            max-height: 300px;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 15px;
+            display: none; /* Hidden by default */
+        }
+
+        #uploaded-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        #text-overlay {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 1.1em;
+            text-align: left;
+            width: calc(100% - 20px);
+            box-sizing: border-box;
+        }
+
+        .text-overlay-input-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .text-overlay-input-group label {
+            display: block;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        #overlay-text {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            color: #333;
+            transition: border-color 0.2s ease-in-out;
+        }
+
+        #overlay-text:focus {
+            outline: none;
+            border-color: rgba(0, 123, 255, 0.2);
+            box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+        }
+
+        button#submitReviewBtn {
+            background-color: #073e15;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+        }
+
+        button#submitReviewBtn:hover {
+            background-color: #116434;
+            transform: translateY(-2px);
+        }
+
+        button#submitReviewBtn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(52, 197, 62, 0.2);
+        }
+
+        .thank-you {
+            margin-top: 30px;
+            color: #28a745;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: none; /* Initially hidden if using the in-page message */
+        }
+
+        .notification {
+            position: absolute;
+            top: 20px; /* Adjust vertical position */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50; /* Example success color */
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            z-index: 1000; /* Ensure it's on top */
+            opacity: 0;
+            animation: fadein 0.5s forwards, fadeout 0.5s 2.5s forwards; /* Fade in and out */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadein {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeout {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+
+        .required-field::after {
+            content: " *";
+            color: red;
+        }
+
+        @media (max-width: 600px) {
+            .review-container {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 2em;
+                margin-bottom: 20px;
+            }
+
+            .star-rating {
+                font-size: 1.5em;
+                gap: 5px;
+                margin-bottom: 15px;
+            }
+
+            .input-group label,
+            .checkbox-group label,
+            .radio-group label,
+            .image-upload-section label,
+            .text-overlay-input-group label,
+            .dropdown-group label {
+                font-size: 0.95em;
+            }
+
+            button#submitReviewBtn {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap">
+</head>
+<body>
+    <div class="logo-container">
+        <a href="index.html" class="logo-link">
+            <img src="img/TAJLOGO.png" alt="Your Logo" class="logo-image">
+        </a>
+    </div>
+
+    <div class="review-container">
+        <h1>Share Your Experience</h1>
+
+        <div class="rating-section">
+            <label class="rating-label">Overall Rating:</label>
+            <div class="star-rating" id="overall-rating">
+                <span data-value="1"><i class="fas fa-star"></i></span>
+                <span data-value="2"><i class="fas fa-star"></i></span>
+                <span data-value="3"><i class="fas fa-star"></i></span>
+                <span data-value="4"><i class="fas fa-star"></i></span>
+                <span data-value="5"><i class="fas fa-star"></i></span>
+            </div>
+            <input type="hidden" id="rating-value" name="rating" value="0">
+        </div>
+
+        <div class="input-group">
+            <label for="name" class="required-field">Your Name:</label>
+            <input type="text" id="name" class="input-field" placeholder="Enter your name" required>
+        </div>
+
+        <div class="input-group">
+            <label for="email" class="required-field">Your Email:</label>
+            <input type="email" id="email" class="input-field" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-group">
+            <label for="title">Review Title:</label>
+            <input type="text" id="title" class="input-field" placeholder="Give your review a title">
+        </div>
+
+        <div class="input-group">
+            <label for="comment" class="required-field">Your Detailed Review:</label>
+            <textarea id="comment" class="input-field" placeholder="Share your thoughts and experiences" required></textarea>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="recommend">
+            <label for="recommend">Would you recommend this to a friend?</label>
+        </div>
+
+        <div class="radio-group">
+            <label>Your Experience Was:</label><br>
+            <input type="radio" id="excellent" name="experience" value="excellent">
+            <label for="excellent">Excellent</label><br>
+            <input type="radio" id="good" name="experience" value="good">
+            <label for="good">Good</label><br>
+            <input type="radio" id="average" name="experience" value="average">
+            <label for="average">Average</label><br>
+            <input type="radio" id="poor" name="experience" value="poor">
+            <label for="poor">Poor</label>
+        </div>
+
+        <div class="dropdown-group">
+            <label for="aspect">What did you like most?</label>
+            <select id="aspect" class="dropdown-field">
+                <option value="">Select an option</option>
+                <option value="service">Customer Service</option>
+                <option value="quality">Product Quality</option>
+                <option value="value">Value for Money</option>
+                <option value="atmosphere">Atmosphere</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="image-upload-section">
+            <label for="image-upload">Upload an Image (Optional):</label>
+            <div class="image-upload-container" onclick="document.getElementById('image-upload').click();">
+                <i class="fas fa-upload image-upload-icon"></i>
+                <p>Click to upload an image</p>
+            </div>
+            <input type="file" id="image-upload" style="display: none;" accept="image/*">
+            <div id="image-preview-container">
+                <img id="uploaded-image" src="#" alt="Uploaded Image">
+                <div id="text-overlay"></div>
+            </div>
+        </div>
+
+        <div class="text-overlay-input-group">
+            <label for="overlay-text">Add Text to Image (Optional):</label>
+            <input type="text" id="overlay-text" class="input-field" placeholder="Enter text to overlay on the image">
+        </div>
+
+        <button type="button" id="submitReviewBtn">Submit Review</button>
+
+        <div id="thank-you-message" class="thank-you">
+            Thank you for your valuable feedback!
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const starRating = document.getElementById('overall-rating');
+            const ratingValueInput = document.getElementById('rating-value');
+            const stars = starRating.querySelectorAll('span');
+            const submitButton = document.getElementById('submitReviewBtn');
+            const reviewContainer = document.querySelector('.review-container');
+            const body = document.body;
+
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const value = parseInt(this.dataset.value);
+                    ratingValueInput.value = value;
+                    highlightStars(value);
+                });
+
+                star.addEventListener('mouseover', function() {
+                    highlightStars(parseInt(this.dataset.value));
+                });
+
+                starRating.addEventListener('mouseout', function() {
+                    highlightStars(parseInt(ratingValueInput.value));
+                });
+            });
+
+            function highlightStars(score) {
+                stars.forEach(star => {
+                    const value = parseInt(star.dataset.value);
+                    star.classList.toggle('active', value <= score);
+                });
+            }
+
+            const imageUpload = document.getElementById('image-upload');
+            const imagePreviewContainer = document.getElementById('image-preview-container');
+            const uploadedImage = document.getElementById('uploaded-image');
+            const textOverlay = document.getElementById('text-overlay');
+            const overlayTextInput = document.getElementById('overlay-text');
+
+            imageUpload.addEventListener('change', function() {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        uploadedImage.src = e.target.result;
+                        imagePreviewContainer.style.display = 'block';
+                    }
+                    reader.readAsDataURL(file);
+                } else {
+                    uploadedImage.src = '#';
+                    imagePreviewContainer.style.display = 'none';
+                }
+            });
+
+            overlayTextInput.addEventListener('input', function() {
+                textOverlay.textContent = this.value;
+                textOverlay.style.display = this.value ? 'block' : 'none';
+            });
+
+            submitButton.addEventListener('click', function() {
+                const nameInput = document.getElementById('name');
+                const emailInput = document.getElementById('email');
+                const commentInput = document.getElementById('comment');
+
+                if (!nameInput.value.trim()) {
+                    alert('Please enter your name.');
+                    nameInput.focus();
+                    return;
+                }
+
+                if (!emailInput.value.trim()) {
+                    alert('Please enter your email.');
+                    emailInput.focus();
+                    return;
+                }
+
+                // Basic email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailInput.value)) {
+                    alert('Please enter a valid email address.');
+                    emailInput.focus();
+                    return;
+                }
+
+                if (!commentInput.value.trim()) {
+                    alert('Please enter your detailed review.');
+                    commentInput.focus();
+                    return;
+                }
+
+                // Simulate submission and show notification
+                console.log('Review Data:');
+                console.log('Rating:', document.getElementById('rating-value').value);
+                console.log('Name:', nameInput.value);
+                console.log('Email:', emailInput.value);
+                console.log('Title:', document.getElementById('title').value);
+                console.log('Comment:', commentInput.value);
+                console.log('Recommend:', document.getElementById('recommend').checked);
+                console.log('Experience:', document.querySelector('input[name="experience"]:checked')?.value);
+                console.log('Aspect:', document.getElementById('aspect').value);
+                console.log('Image:', document.getElementById('uploaded-image').src === '#' ? null : document.getElementById('uploaded-image').src);
+                console.log('Overlay Text:', document.getElementById('overlay-text').value);
+
+                // Create and display the notification
+                const notification = document.createElement('div');
+                notification.classList.add('notification');
+                notification.textContent = 'Thank you for your review!';
+
+                reviewContainer.appendChild(notification); // Append to the review container
+
+                // Optional: Remove the notification after a few seconds
+                setTimeout(() => {
+                    if (reviewContainer.contains(notification)) {
+                        reviewContainer.removeChild(notification);
+                        // Optionally clear the form after successful "submission"
+                        document.getElementById('overall-rating').querySelectorAll('span').forEach(star => star.classList.remove('active'));
+                        document.getElementById('rating-value').value = 0;
+                        document.getElementById('name').value = '';
+                        document.getElementById('email').value = '';
+                        document.getElementById('title').value = '';
+                        document.getElementById('comment').value = '';
+                        document.getElementById('recommend').checked = false;
+                        const checkedRadio = document.querySelector('input[name="experience"]:checked');
+                        if (checkedRadio) checkedRadio.checked = false;
+                        document.getElementById('aspect').selectedIndex = 0;
+                        document.getElementById('image-upload').value = '';
+                        document.getElementById('uploaded-image').src = '#';
+                        document.getElementById('image-preview-container').style.display = 'none';
+                        document.getElementById('overlay-text').value = '';
+                        document.getElementById('text-overlay').textContent = '';
+                        document.getElementById('text-overlay').style.display = 'none';
+                    }
+                }, 3000); // 3 seconds
+            });
+        });
+    </script>
+</body>
+</html>
+
+

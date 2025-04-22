@@ -1,0 +1,109 @@
+/* Styles for the OTP page */
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4; /* Fallback background */
+    margin: 0; /* Ensure no default body margins */
+}
+
+.background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -22; /* Place the video behind the content */
+    transform: translate(-50%, -50%);
+}
+
+.otp-container {
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Subtle light border */
+    backdrop-filter: blur(10px); /* Apply a blur to the background */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(240, 240, 240, 0.7)); /* Subtle gradient */
+    z-index: 100; /* Ensure it's above the video */
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#generatedOTP {
+    font-size: 20px;
+    color: rgb(10, 61, 34);
+    font-weight: bold;
+    display: block;
+    margin: 10px 0;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    color: #555;
+}
+
+#otpInput {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#verifyOTPBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+#verifyOTPBtn:hover {
+    opacity: 0.8;
+}
+
+#otpMessage {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.message.success {
+    color: rgb(9, 83, 56);
+}
+
+.message.error {
+    color: rgb(93, 21, 21);
+}
+
+#goHomeBtn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: none; /* Hidden initially */
+}
+
+#goHomeBtn:hover {
+    opacity: 0.8;
+}

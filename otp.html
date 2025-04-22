@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="otp_style.css">
+    <script src="otp_script.js" defer></script>
+</head>
+<body>
+    <video autoplay loop muted playsinline class="background-video">
+        <source src="img/112696-695433068_small.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="otp-container">
+        <h2>OTP Verification</h2>
+        <p>Your OTP is: <strong id="generatedOTP"></strong></p>
+        <label for="otpInput">Enter OTP:</label>
+        <input type="text" id="otpInput" placeholder="Enter OTP">
+        <button id="verifyOTPBtn">Verify OTP</button>
+        <div id="otpMessage" class="message"></div>
+        <button id="goHomeBtn" style="display: none;">Go to Home</button>
+    </div>
+</body>
+</html>

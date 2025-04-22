@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taj Kerala - Sign Up</title>
+    <style>
+        body {
+            background-image: url("img/34608-402679728_medium.mp4");
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #004d40, #008080); /* Taj-like green gradient */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+        }
+        .background-video {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 40px;
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+            color: #ffffff; }
+
+        .brand {
+            margin-bottom: 30px;
+        }
+
+        .brand img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .brand h2 {
+            font-size: 1.8em;
+            font-weight: 400;
+        }
+
+        .signup-card {
+            margin-top: 20px;
+        }
+
+        .signup-card h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #43d1ab;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #eee;
+        }
+
+        .input-group input[type="text"],
+        .input-group input[type="email"],
+        .input-group input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .input-group input[type="text"]:focus,
+        .input-group input[type="email"]:focus,
+        .input-group input[type="password"]:focus {
+            background-color: rgba(255, 255, 255, 0.3);
+            outline: none;
+        }
+
+        .agreement {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: #ccc;
+            text-align: left;
+        }
+
+        .agreement input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .agreement a {
+            color: #a7ffeb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .agreement a:hover {
+            color: #4dd0e1;
+        }
+
+        .signup-button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background-color: #00897b; /* A different shade of green for distinction */
+            color: #fff;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .signup-button:hover {
+            background-color: #00796b;
+        }
+
+        .signin-link {
+            margin-top: 30px;
+            font-size: 0.95em;
+        }
+
+        .signin-link a {
+            color: #a7ffeb;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .signin-link a:hover {
+            color: #4dd0e1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px;
+                border-radius: 10px;
+            }
+
+            .brand img {
+                width: 60px;
+            }
+
+            .brand h2 {
+                font-size: 1.5em;
+            }
+
+            .signup-card h1 {
+                color: #00796b;
+                font-size: 2em;
+                margin-bottom: 15px;
+            }
+
+            .input-group {
+                margin-bottom: 15px;
+            }
+
+            .signup-button {
+                padding: 10px;
+                font-size: 1em;
+            }
+
+            .agreement, .signin-link {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay loop muted playsinline class="background-video">
+        <source src="img\34608-402679728_medium.mp4" type="video/mp4">
+    </video>
+
+    <div class="container">
+        <div class="brand">
+            <img src="img\TAJLOGO.png" alt="Taj Hotels Logo">
+            <h2>Create Your Taj Kerala Account</h2>
+        </div>
+        <div class="signup-card">
+            <h1>Sign Up</h1>
+            <form id="signup-form">
+                <div class="input-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+                </div>
+                <div class="agreement">
+                    <label>
+                        <input type="checkbox" name="terms" required> I agree to the <a href="#">Terms & Conditions</a>
+                    </label>
+                </div>
+                <button type="submit" class="signup-button">Sign Up</button>
+            </form>
+            <div class="signin-link">
+                Already have an account? <a href="index.html">Sign In</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
